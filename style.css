@@ -1,0 +1,367 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Oleo Script', cursive;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(0deg, rgb(153, 190, 150) 0%, rgb(152, 199, 191) 100%);
+    box-shadow: inset 0 -10px rgb(145, 88, 14), inset 0 -50px  rgb(69, 122, 74);
+
+}
+
+body{
+    counter-reset: contador;
+}
+
+.titulo {
+    font-size: 3.2rem;
+}
+
+
+
+
+.telefono{
+    width: 320px;
+    height: 480px;
+    background: linear-gradient(0deg, rgb(121, 211, 203) 75%, rgb(99, 191, 253) 100%);
+    border-radius: 25px;
+    border: black 10px solid;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.541),inset 0 5px 10px rgba(0, 0, 0, 0.24);
+    margin: 3% auto;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.capa{
+    position: absolute;
+    bottom: 0;
+}
+
+.tierra{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background: 
+        linear-gradient(225deg, rgb(89, 241, 105) 50%,transparent 50%),
+        linear-gradient(135deg, rgb(76, 182, 86) 50%,transparent 50%) 
+    ;
+    background-size: 20px 50px;
+    background-repeat: repeat-x;
+    background-position: top left;
+    background-color: rgb(80, 197, 92); 
+    height: calc(100% - 65px);
+    z-index: 3;
+    filter: drop-shadow(20px 20px 20px rgba(0, 0, 0, 0.308));
+    box-shadow: inset 75px 0 75px rgba(9, 243, 87, 0.541);
+
+}
+/*
+   ==========================================================
+   ==========================CAPA 1==========================
+   ==========================================================
+*/
+
+.capa-1 {
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    
+    position: absolute;
+    top: 30px;
+}
+
+.contador{
+    font-size: 1.4rem;
+}
+.contador::after{
+    content: counter(contador);
+}
+
+/*
+   ==========================================================
+   ==========================CAPA 2==========================
+   ==========================================================
+*/
+
+.capa-2 {
+    z-index: 2;
+    width: 220px;
+    height: 350px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+       
+}
+
+.conejo{
+    width: 65px;
+    position: absolute;
+    top: 35px;
+    z-index: 1;
+}
+
+.checkbox {
+    width: 100%;
+    height: 65px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    appearance: none;
+    z-index: 100;
+    opacity: 0;
+}
+.checkbox:checked{
+    counter-increment: contador;
+    /* Es importante que el contador en HTML se encuentre debajo de los checkbox que pretende contar o no los contara; por eso la capa 1 está  abajo  */
+}
+
+
+.conejo *{
+    position: absolute;
+    background-color: rgb(255, 239, 213);
+}
+
+.conejo-1, .conejo-2 {
+    height: 285px;
+}
+
+.conejo-1 {
+    right: 25px;
+
+}
+
+.conejo-2{
+    left: 25px;
+}
+
+.conejo--cuerpo {
+    width: 65px;
+    height: 65px;
+
+    border-radius: 50%;
+    z-index: 4;
+}
+
+.conejo--cuerpo::after{
+    content: "";
+    position: absolute;
+    background-color: rgb(255, 158, 247);
+    left: 0;
+    right: 0;
+    margin: 27px auto;
+    border-radius: 50% 50% 30% 30%;
+    height: 15px;
+    width: 15px;
+
+}
+
+.conejo--oreja {
+    height: 65px;
+    width: 20px;
+    top: -40px;
+    z-index: 1;
+    border-radius: 50% 50%;
+}
+
+.conejo--oreja::after {
+    content: "";
+    height: 55px;
+    width: 14px;
+    background-color: rgb(241, 170, 232);
+    top: -15px;
+    z-index: 3;
+    position: absolute;
+    top: 10px;
+    left: 3px;
+    border-radius: 50%;
+    border-top: solid rgba(0, 0, 0, 0.253) 5px;
+
+    
+}
+
+.conejo--oreja-izquierda{
+    left: 5px;
+}
+
+.conejo--oreja-derecha{
+    right: 5px;
+}
+
+.conejo--ojo {
+    width: 5px;
+    height: 5px;
+    top: 24px;
+    background-color: red;
+    border-radius: 50%;
+    z-index: 5;
+    border-top: solid rgb(0, 0, 0) 2px;
+}
+
+.conejo--ojo-izquierdo{
+    left: 2px;
+}
+
+.conejo--ojo-derecho{
+    right: 2px;
+}
+
+
+
+/*
+   ==========================================================
+   ==========================CAPA 3==========================
+   ==========================================================
+*/
+
+.capa-3 {
+    z-index: 3;
+    width: 185px;
+    height: 275px;
+}
+
+.conejo-3{
+    left: 20px;
+}
+
+
+/*
+   ==========================================================
+   ==========================CAPA 4==========================
+   ==========================================================
+*/
+
+.capa-4 {
+    z-index: 4;
+    height: 200px;
+    width: 185px;
+    right: 0;
+}
+
+.conejo-4 {
+    right: 10px;
+}
+
+
+
+
+
+/*
+   ==========================================================
+   ==========================CAPA 5==========================
+   ==========================================================
+*/
+
+.capa-5 {
+    z-index: 5;
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.nube{
+    position: absolute;
+
+    height: 200px;
+    width: 200px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background: whitesmoke;
+    border-radius: 50%;
+    top: 0px;
+    opacity: .9;
+
+    
+}
+
+.nube::before{
+    height: 100px;
+    width: 100px;
+    content: "";
+    position: absolute;
+    left: -50px;
+    top: 40px;
+    opacity: .9;
+    border-radius: 50%;
+    background: whitesmoke;
+}
+
+.nube::after{
+    height: 150px;
+    width: 150px;
+    content: "";
+    position: absolute;
+    right: -70px;
+    top: 20px;
+    opacity: .9;
+    border-radius: 50%;
+    background: whitesmoke;
+    
+}
+
+
+/*
+   ==========================================================
+   ==========================EFECTOS==========================
+   ==========================================================
+*/
+
+.capa:hover .conejo {
+    transform: translateY(60px);
+}
+
+.conejo {
+    transition: transform 200ms;
+    transition-timing-function:cubic-bezier(.43,-0.8,.45,1.54);
+    transition-delay: 300ms;
+}
+
+.nube:hover {
+    transform: translateX(-20px) translateY(5px);
+}
+
+.nube {
+        transition: transform 250ms;
+        transition-timing-function:linear;
+}
+
+.conejo--ojo {
+    animation: parpadeo 5s linear infinite normal;
+}
+.conejo-1 .conejo--ojo {
+    animation-delay:1s;
+}
+.conejo-2 .conejo--ojo {
+    animation-delay:0s;
+}
+.conejo-3 .conejo--ojo {
+    animation-delay:3s;
+}
+.conejo-4 .conejo--ojo {
+    animation-delay:4s;
+}
+@keyframes parpadeo {
+    0% {
+        transform-origin: bottom center;
+        transform: scaleY(100%);
+    }
+    1% {
+    transform: scaleY(85%);
+    }
+    2% {
+    transform: scaleY(0%);
+    }
+    3% {
+    transform: scaleY(15%);
+    }
+    4% {
+    transform: scaleY(100%);
+    }
+}
